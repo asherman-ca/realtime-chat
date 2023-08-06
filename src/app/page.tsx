@@ -1,5 +1,7 @@
-import Image from 'next/image'
+import { db } from '@/lib/db'
 
-export default function Home() {
+export default async function Home() {
+	await db.set('test', 'test')
+
 	return <main>Main</main>
 }
