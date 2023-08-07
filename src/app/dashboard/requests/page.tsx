@@ -1,10 +1,9 @@
+import FriendRequests from '@/components/FriendRequests'
 import { fetchRedis } from '@/helpers/redis'
-import { authOptions, getAuthSession } from '@/lib/auth'
-import { getServerSession } from 'next-auth'
+import { getAuthSession } from '@/lib/auth'
 import { notFound } from 'next/navigation'
 
 const page = async () => {
-	// const session = await getServerSession(authOptions)
 	const session = await getAuthSession()
 	if (!session) notFound()
 
@@ -32,10 +31,10 @@ const page = async () => {
 		<main className='pt-8'>
 			<h1 className='font-bold text-5xl mb-8'>Add a friend</h1>
 			<div className='flex flex-col gap-4'>
-				{/* <FriendRequests
+				<FriendRequests
 					incomingFriendRequests={incomingFriendRequests}
 					sessionId={session.user.id}
-				/> */}
+				/>
 				Friend Requests
 			</div>
 		</main>
