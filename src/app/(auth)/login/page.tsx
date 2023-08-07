@@ -34,7 +34,6 @@ const page = () => {
 						Sign in to your account
 					</h2>
 				</div>
-				<Button onClick={() => signOut()}>Logout</Button>
 				<Button
 					isLoading={isLoading}
 					type='button'
