@@ -1,12 +1,14 @@
 import Button from '@/components/ui/Button'
-import { FC } from 'react'
+import { getAuthSession } from '@/lib/auth'
 
-interface pageProps {}
+const page = async ({}) => {
+	const session = await getAuthSession()
 
-const page: FC<pageProps> = ({}) => {
 	return (
 		<div>
-			Dashboard <Button variant={'default'}>Button</Button>
+			Dashboard
+			<pre>{JSON.stringify(session)}</pre>
+			<Button variant={'default'}>Button</Button>
 		</div>
 	)
 }

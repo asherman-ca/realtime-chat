@@ -1,6 +1,6 @@
 'use client'
 import Button from '@/components/ui/Button'
-import { signIn } from 'next-auth/react'
+import { signIn, signOut } from 'next-auth/react'
 import React, { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
@@ -34,6 +34,7 @@ const page = () => {
 						Sign in to your account
 					</h2>
 				</div>
+				<Button onClick={() => signOut()}>Logout</Button>
 				<Button
 					isLoading={isLoading}
 					type='button'
