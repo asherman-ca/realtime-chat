@@ -16,8 +16,8 @@ const FriendRequestSidebarOptions: FC<FriendRequestSidebarOptionsProps> = ({
 		initialUnseenRequestCount
 	)
 
-	console.log('unseenRequestCount', unseenRequestCount)
-	console.log('initialUnseenRequestCount', initialUnseenRequestCount)
+	// console.log('unseenRequestCount', unseenRequestCount)
+	// console.log('initialUnseenRequestCount', initialUnseenRequestCount)
 
 	return (
 		<Link
