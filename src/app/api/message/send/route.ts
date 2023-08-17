@@ -50,21 +50,21 @@ export async function POST(req: Request) {
 		const message = messageValidator.parse(messageData)
 
 		// notify all connected chat room clients
-		// await pusherServer.trigger(
-		// 	toPusherKey(`chat:${chatId}`),
-		// 	'incoming-message',
-		// 	message
-		// )
+		await pusherServer.trigger(
+			toPusherKey(`chat:${chatId}`),
+			'incoming-message',
+			message
+		)
 
-		// await pusherServer.trigger(
-		// 	toPusherKey(`user:${friendId}:chats`),
-		// 	'new_message',
-		// 	{
-		// 		...message,
-		// 		senderImg: sender.image,
-		// 		senderName: sender.name,
-		// 	}
-		// )
+		await pusherServer.trigger(
+			toPusherKey(`user:${friendId}:chats`),
+			'new_message',
+			{
+				...message,
+				senderImg: sender.image,
+				senderName: sender.name,
+			}
+		)
 
 		// all valid, send the message
 		// zset is a sorted set. sorted by timestamp in this case
