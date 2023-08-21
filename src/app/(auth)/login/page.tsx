@@ -1,7 +1,7 @@
 'use client'
 import Button from '@/components/ui/Button'
 import { signIn, signOut } from 'next-auth/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
 // const errorProm = new Promise((resolve, reject) => {
@@ -10,7 +10,7 @@ import { toast } from 'react-hot-toast'
 // 	}, 5000)
 // })
 
-const page = () => {
+const Page = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 
 	async function loginWithGoogle() {
@@ -77,4 +77,4 @@ const page = () => {
 	)
 }
 
-export default page
+export default Page
